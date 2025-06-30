@@ -15,6 +15,178 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Roboto+Slab:wght@700&family=Fira+Mono&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <!-- Styles will go here -->
+  <style>
+  :root {
+    --mit-crimson: #a31f34;
+    --mit-accent: #00bcd4;
+    --mit-gold: #ffd600;
+    --bg-gradient: linear-gradient(120deg, #f1f4fa 0%, #e3e7ed 100%);
+    --text: #343a40;
+    --heading: #232323;
+    --section-bg: #fff;
+    --shadow: 0 6px 28px rgba(0,0,0,0.10);
+    --radius: 12px;
+    --transition: 0.3s ease;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg-gradient);
+    font-family: 'Inter', sans-serif;
+    color: var(--text);
+    line-height: 1.7;
+  }
+
+  header {
+    text-align: center;
+    padding: 2.5rem 1rem;
+    background: linear-gradient(100deg, var(--mit-crimson), var(--mit-accent));
+    color: #fff;
+  }
+
+  header h1 {
+    margin: 0;
+    font-size: 2.7rem;
+    font-family: 'Roboto Slab', serif;
+  }
+
+  header p {
+    font-size: 1.2rem;
+    margin: 0.6rem 0 1rem;
+  }
+
+  nav a {
+    margin: 0 1rem;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color var(--transition), border-bottom var(--transition);
+  }
+
+  nav a:hover,
+  nav a.active {
+    color: var(--mit-gold);
+    border-bottom: 2px solid var(--mit-gold);
+  }
+
+  .badge {
+    background: var(--mit-gold);
+    color: var(--mit-crimson);
+    font-weight: 700;
+    padding: 0.2em 0.6em;
+    border-radius: 5px;
+    font-size: 0.85rem;
+  }
+
+  .socials a {
+    color: #fff;
+    margin: 0 0.5rem;
+    font-size: 1.6rem;
+    transition: transform 0.2s, color var(--transition);
+  }
+
+  .socials a:hover {
+    color: var(--mit-gold);
+    transform: scale(1.1);
+  }
+
+  main {
+    max-width: 950px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+
+  section {
+    background: var(--section-bg);
+    margin-bottom: 2rem;
+    padding: 2rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+  }
+
+  h2 {
+    font-family: 'Roboto Slab', serif;
+    color: var(--mit-crimson);
+    margin-top: 0;
+    font-size: 1.7rem;
+    border-bottom: 2px solid var(--mit-gold);
+    display: inline-block;
+    padding-bottom: 0.3rem;
+    margin-bottom: 1rem;
+  }
+
+  .btn {
+    display: inline-block;
+    background: var(--mit-crimson);
+    color: #fff;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background var(--transition), transform 0.2s;
+  }
+
+  .btn:hover {
+    background: var(--mit-gold);
+    color: var(--mit-crimson);
+    transform: scale(1.05);
+  }
+
+  .project-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .project {
+    background: #e3f6f9;
+    padding: 1rem;
+    border-left: 4px solid var(--mit-accent);
+    border-radius: 7px;
+  }
+
+  .project:hover {
+    border-left: 4px solid var(--mit-gold);
+    background: #f0fbfc;
+  }
+
+  .contact-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .contact-list li {
+    margin-bottom: 0.7rem;
+    font-size: 1.1rem;
+  }
+
+  .contact-list a {
+    color: var(--mit-crimson);
+    font-weight: 600;
+    text-decoration: underline;
+  }
+
+  .contact-list a:hover {
+    color: var(--mit-gold);
+  }
+
+  footer {
+    text-align: center;
+    padding: 1.5rem;
+    background: #232323;
+    color: #fff;
+    font-size: 1rem;
+    border-radius: 0 0 var(--radius) var(--radius);
+  }
+
+  @media (min-width: 600px) {
+    .project-list {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+</style>
+
 </head>
 <body>
   <!-- Header -->
