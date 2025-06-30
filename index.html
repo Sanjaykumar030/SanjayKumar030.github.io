@@ -4,124 +4,227 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sanjay Kumar Sakamuri Kamalakar</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <meta name="description" content="Portfolio of Sanjay Kumar Sakamuri Kamalakar, ML & Backend Enthusiast, SRM CSE Undergraduate. Projects, publications, and contact info." />
+  <meta name="author" content="Sanjay Kumar Sakamuri Kamalakar" />
+  <link rel="icon" href="https://fav.farm/🌟" type="image/svg+xml" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Fira+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
+    :root {
+      --primary: #0a192f;
+      --accent: #64ffda;
+      --bg: #f7f9fc;
+      --card: #fff;
+      --heading: #112240;
+      --text: #222;
+      --border-radius: 12px;
+      --transition: 0.2s cubic-bezier(.4,2,.6,1);
+      --shadow: 0 4px 16px rgba(0,0,0,0.08);
+    }
+    * { box-sizing: border-box; }
     body {
-      font-family: 'Inter', sans-serif;
       margin: 0;
-      padding: 0;
-      background: #f7f9fc;
-      color: #222;
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', Arial, sans-serif;
+      line-height: 1.7;
     }
     header {
-      background: #2a4365;
-      color: white;
-      padding: 2rem 1rem;
+      background: var(--primary);
+      color: var(--accent);
+      padding: 2.5rem 1rem 2rem 1rem;
       text-align: center;
+      position: relative;
     }
     header h1 {
-      margin: 0;
-      font-size: 2.5rem;
+      margin: 0 0 .5rem 0;
+      font-size: 2.8rem;
+      font-weight: 700;
+      letter-spacing: -1px;
     }
+    header p {
+      color: #fff;
+      margin: 0 0 1.5rem 0;
+      font-size: 1.25rem;
+    }
+    nav {
+      margin-bottom: 1.5rem;
+    }
+    nav a {
+      color: #fff;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color var(--transition);
+    }
+    nav a:hover, nav a.active { color: var(--accent); }
+    .socials {
+      margin-top: 1.3rem;
+    }
+    .socials a {
+      color: #fff;
+      margin: 0 .6rem;
+      font-size: 1.7rem;
+      transition: color var(--transition), transform .1s;
+      vertical-align: middle;
+    }
+    .socials a:hover { color: var(--accent); transform: translateY(-2px) scale(1.08);}
     main {
-      max-width: 800px;
-      margin: 2rem auto;
-      padding: 0 1rem;
+      max-width: 900px;
+      margin: 2.5rem auto;
+      padding: 0 1.2rem;
     }
     section {
-      margin-bottom: 2rem;
+      margin-bottom: 2.5rem;
+      background: var(--card);
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
+      padding: 2rem;
+      transition: box-shadow var(--transition);
     }
+    section:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.13);}
     h2 {
-      border-bottom: 2px solid #2a4365;
-      padding-bottom: 0.5rem;
+      margin-top: 0;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--heading);
+      border-bottom: 2px solid var(--accent);
+      padding-bottom: 0.3rem;
+      margin-bottom: 1.2rem;
     }
-    .project, .publication {
-      margin-bottom: 1rem;
+    .publication, .project {
+      margin-bottom: 1.2rem;
+    }
+    .project-list {
+      display: grid;
+      gap: 1.2rem;
+      grid-template-columns: 1fr;
+    }
+    .project {
+      border-left: 4px solid var(--accent);
+      padding-left: 1rem;
+      background: #f5fafe;
+      border-radius: 7px;
+      transition: background var(--transition);
+    }
+    .project:hover { background: #e9f8f7;}
+    .btn {
+      background: var(--accent);
+      color: var(--primary);
+      padding: 0.65rem 1.2rem;
+      border: none;
+      border-radius: 6px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      font-size: 1.05rem;
+      transition: background var(--transition), color var(--transition);
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 0.5rem;
+    }
+    .btn:hover, .btn:focus { background: var(--primary); color: var(--accent);}
+    .contact-list {
+      list-style: none;
+      padding: 0;
+      margin: 0.5rem 0 0 0;
+    }
+    .contact-list li {
+      margin-bottom: 0.6rem;
+      font-size: 1.1rem;
+    }
+    .contact-list i {
+      color: var(--accent);
+      margin-right: 0.5rem;
     }
     footer {
       text-align: center;
-      padding: 1rem;
+      padding: 1.5rem;
       background: #e2e8f0;
-      font-size: 0.9rem;
+      font-size: 1.05rem;
+      color: #444;
+      letter-spacing: 0.2px;
+      border-radius: 0 0 var(--border-radius) var(--border-radius);
     }
-    a {
-      color: #2a4365;
-      text-decoration: none;
+    @media (min-width: 600px) {
+      .project-list { grid-template-columns: 1fr 1fr; }
     }
-    a:hover {
-      text-decoration: underline;
-    }
-    .btn {
-      background: #2a4365;
-      color: white;
-      padding: 0.5rem 1rem;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: 600;
+    @media (max-width: 500px) {
+      header h1 { font-size: 2rem;}
+      main { padding: 0 0.2rem;}
+      section { padding: 1rem;}
     }
   </style>
 </head>
 <body>
   <header>
     <h1>Sanjay Kumar Sakamuri Kamalakar</h1>
-    <p>Learning ML & Backend | SRM CSE Undergraduate</p>
+    <p>Learning ML & Backend &mdash; SRM CSE Undergraduate</p>
+    <nav>
+      <a href="#about" class="active">About</a>
+      <a href="#publications">Publications</a>
+      <a href="#projects">Projects</a>
+      <a href="#resume">Resume</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="socials" aria-label="Social links">
+      <a href="https://github.com/Sanjaykumar030" title="GitHub" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/sanjay-kumar-sakamuri-kamalakar-a67148214" title="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+      <a href="mailto:sksanjaykumar010307@gmail.com" title="Email" rel="noopener noreferrer"><i class="fas fa-envelope"></i></a>
+    </div>
   </header>
-
   <main>
-    <section>
+    <section id="about">
       <h2>About Me</h2>
       <p>
-        I'm a B.Tech Computer Science Engineering student at SRM Institute of Science and Technology, currently diving deep into the fields of Machine Learning and Backend Engineering.
-        <br><br>
-        🔬 I'm a student member of the IEEE Computer Society and actively building projects that connect science, math, and technology.
-        <br><br>
-        📚 I’ve completed the "Supervised Machine Learning: Regression and Classification" course and am continuing the Machine Learning Specialization by Andrew Ng on Coursera. I also explore tools like pandas, NumPy, tkinter, GitHub, and scientific libraries like SymPy and Matplotlib.
-        <br><br>
-        🧠 My passion lies in visualizing abstract scientific principles through programming and creating tools that enhance understanding — such as quantum distributions or solving differential equations through interactive GUIs.
+        I’m a B.Tech Computer Science Engineering student at SRM Institute of Science and Technology, exploring Machine Learning and Backend Engineering.<br><br>
+        <strong>IEEE Computer Society Student Member.</strong> I love building projects that connect science, math, and technology.<br><br>
+        <strong>Courses:</strong> Completed "Supervised Machine Learning: Regression and Classification" and pursuing the Machine Learning Specialization by Andrew Ng (Coursera).<br><br>
+        My passion is visualizing abstract scientific principles through code, and creating tools that enhance learning—such as quantum distributions or interactive ODE solvers.
       </p>
     </section>
 
-    <section>
+    <section id="publications">
       <h2>Publications</h2>
       <div class="publication">
         <strong>Fermi-Dirac Probability Visualizer</strong><br />
         <em>Zenodo (Preprint), 2025</em><br />
-        <a href="https://zenodo.org/record/15592765" target="_blank">DOI: 10.5281/zenodo.15592765</a>
+        <a href="https://zenodo.org/record/15592765" target="_blank" rel="noopener noreferrer">DOI: 10.5281/zenodo.15592765</a>
       </div>
     </section>
 
-    <section>
+    <section id="projects">
       <h2>Projects</h2>
-
-      <div class="project">
-        <strong>Differential Equation Solver (GUI)</strong><br />
-        A Python-based GUI app built with tkinter and sympy for solving ordinary differential equations interactively.<br />
-        <a href="https://github.com/Sanjaykumar030/DiffEqnSolver" target="_blank">View on GitHub</a>
-      </div>
-
-      <div class="project">
-        <strong>Fermi-Dirac Probability Visualizer</strong><br />
-        A scientific visualizer for exploring Fermi-Dirac distributions, with numerical tools and interactive graphs for analyzing electron behavior in quantum systems.<br />
-        <a href="https://github.com/Sanjaykumar030/Fermi-Dirac-Probability-Visualizer" target="_blank">View on GitHub</a>
+      <div class="project-list">
+        <div class="project">
+          <strong>Differential Equation Solver (GUI)</strong><br />
+          Python GUI app (tkinter &amp; sympy) for solving ODEs interactively.<br />
+          <a href="https://github.com/Sanjaykumar030/DiffEqnSolver" target="_blank" rel="noopener noreferrer" class="btn">GitHub Repo</a>
+        </div>
+        <div class="project">
+          <strong>Fermi-Dirac Probability Visualizer</strong><br />
+          Visualizer for Fermi-Dirac distributions—numerical tools, interactive graphs, and quantum electron analysis.<br />
+          <a href="https://github.com/Sanjaykumar030/Fermi-Dirac-Probability-Visualizer" target="_blank" rel="noopener noreferrer" class="btn">GitHub Repo</a>
+        </div>
       </div>
     </section>
 
-    <section>
+    <section id="resume">
       <h2>Resume</h2>
-      <p>
-        <a class="btn" href="[YOUR_RESUME_LINK_HERE]" target="_blank">Download Resume</a>
-      </p>
+      <a class="btn" href="YOUR_RESUME_LINK_HERE" target="_blank" rel="noopener noreferrer">Download Resume</a>
     </section>
 
-    <section>
+    <section id="contact">
       <h2>Contact</h2>
-      <p>Email: sksanjaykumar010307@gmail.com</p>
-      <p>LinkedIn: <a href="[https://www.linkedin.com/in/sanjay-kumar-sakamuri-kamalakar-a67148214]" target="_blank">linkedin.com/in/sanjay-kumar-sakamuri-kamalakar</a></p>
+      <ul class="contact-list">
+        <li><i class="fas fa-envelope"></i> sksanjaykumar010307@gmail.com</li>
+        <li><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/sanjay-kumar-sakamuri-kamalakar-a67148214" target="_blank" rel="noopener noreferrer">linkedin.com/in/sanjay-kumar-sakamuri-kamalakar</a></li>
+        <li><i class="fab fa-github"></i> <a href="https://github.com/Sanjaykumar030" target="_blank" rel="noopener noreferrer">github.com/Sanjaykumar030</a></li>
+      </ul>
     </section>
   </main>
-
   <footer>
-    &copy; 2025 Sanjay Kumar Sakamuri Kamalakar
+    &copy; 2025 Sanjay Kumar Sakamuri Kamalakar &mdash; Built with passion and code.
   </footer>
 </body>
 </html>
