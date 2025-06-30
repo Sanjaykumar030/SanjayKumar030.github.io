@@ -3,271 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title></title>
-  <meta name="description" content="Portfolio of Sanjay Kumar Sakamuri Kamalakar, ML & Backend Enthusiast, SRM CSE Undergraduate. Projects, publications, and contact info." />
+  <title>Sanjay Kumar Sakamuri Kamalakar | ML & Backend Portfolio</title>
+  <meta name="description" content="MIT-level portfolio of Sanjay Kumar Sakamuri Kamalakar, a CSE undergraduate at SRM, focused on Machine Learning, Backend Engineering, and research-grade visual tools." />
   <meta name="author" content="Sanjay Kumar Sakamuri Kamalakar" />
-  <link rel="icon" href="https://fav.farm/🌟" type="image/svg+xml" />
+  <meta property="og:title" content="Sanjay Kumar Sakamuri Kamalakar | ML & Backend Portfolio">
+  <meta property="og:description" content="Projects, research, and contact info of SRM CSE undergraduate Sanjay Kumar Sakamuri Kamalakar.">
+  <meta property="og:image" content="https://yourdomain.com/preview.jpg">
+  <meta property="og:url" content="https://yourusername.github.io">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="https://fav.farm/%F0%9F%8C%9F" type="image/svg+xml" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Roboto+Slab:wght@700&family=Fira+Mono&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <style>
-    :root {
-      --mit-crimson: #a31f34;
-      --mit-gray: #232323;
-      --mit-accent: #00bcd4;
-      --mit-gold: #ffd600;
-      --bg-gradient: linear-gradient(120deg, #f1f4fa 0%, #e3e7ed 100%);
-      --section-bg: #fff;
-      --section-highlight: #fbe9e7;
-      --badge-bg: #a31f34;
-      --badge-color: #fff;
-      --heading: #232323;
-      --text: #343a40;
-      --border-radius: 14px;
-      --shadow: 0 6px 28px rgba(0,0,0,0.10);
-      --transition: 0.23s cubic-bezier(.4,2,.6,1);
-    }
-    * { box-sizing: border-box; }
-    html, body {
-      height: 100%;
-      margin: 0;
-      padding: 0;
-    }
-    body {
-      min-height: 100vh;
-      background: var(--bg-gradient);
-      color: var(--text);
-      font-family: 'Inter', Arial, sans-serif;
-      line-height: 1.7;
-      letter-spacing: 0.01em;
-    }
-    header {
-      background: linear-gradient(100deg, var(--mit-crimson) 60%, var(--mit-accent) 100%);
-      color: #fff;
-      padding: 2.5rem 1rem 2rem 1rem;
-      text-align: center;
-      box-shadow: 0 4px 32px rgba(163,31,52,0.12);
-      position: relative;
-      overflow: hidden;
-    }
-    header::after {
-      content: "";
-      position: absolute;
-      top: -40px; right: -60px; width: 220px; height: 220px;
-      background: radial-gradient(circle, var(--mit-gold) 0%, transparent 80%);
-      opacity: 0.23;
-      z-index: 0;
-    }
-    header h1 {
-      margin: 0 0 .5rem 0;
-      font-size: 2.85rem;
-      font-family: 'Roboto Slab', serif;
-      font-weight: 700;
-      letter-spacing: -1.5px;
-      z-index: 1;
-      position: relative;
-      text-shadow: 0 2px 12px rgba(0,0,0,0.10);
-    }
-    header p {
-      margin: 0 0 1.5rem 0;
-      font-size: 1.3rem;
-      color: #f7f7f7;
-      z-index: 1;
-      position: relative;
-    }
-    nav {
-      margin-bottom: 1.5rem;
-      z-index: 1;
-      position: relative;
-    }
-    nav a {
-      color: #fff;
-      margin: 0 1.1rem;
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 1.08rem;
-      letter-spacing: 0.5px;
-      padding-bottom: 0.25rem;
-      border-bottom: 2.2px solid transparent;
-      transition: color var(--transition), border-color var(--transition);
-      position: relative;
-    }
-    nav a.active, nav a:hover {
-      color: var(--mit-gold);
-      border-bottom: 2.2px solid var(--mit-gold);
-    }
-    .socials {
-      margin-top: 1.3rem;
-      z-index: 1;
-      position: relative;
-    }
-    .socials a {
-      color: #fff;
-      margin: 0 .7rem;
-      font-size: 1.9rem;
-      transition: color var(--transition), transform .13s;
-      vertical-align: middle;
-      background: rgba(255,255,255,0.04);
-      padding: 0.4em 0.48em;
-      border-radius: 50%;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-      display: inline-block;
-    }
-    .socials a:hover {
-      color: var(--mit-crimson);
-      background: #fff;
-      transform: translateY(-3px) scale(1.11);
-    }
-    main {
-      max-width: 940px;
-      margin: 2.7rem auto 2.2rem auto;
-      padding: 0 1.3rem;
-    }
-    section {
-      margin-bottom: 2.5rem;
-      background: var(--section-bg);
-      border-radius: var(--border-radius);
-      box-shadow: var(--shadow);
-      padding: 2.2rem 2rem 2rem 2rem;
-      transition: box-shadow var(--transition), transform var(--transition);
-      position: relative;
-      overflow: hidden;
-      border-left: 8px solid var(--mit-crimson);
-      animation: fadeInUp 1.2s cubic-bezier(.6,0,.4,1);
-    }
-    section:hover {
-      box-shadow: 0 10px 38px rgba(163,31,52,0.17);
-      transform: translateY(-2px) scale(1.01);
-    }
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(30px);}
-      to { opacity: 1; transform: translateY(0);}
-    }
-    h2 {
-      margin-top: 0;
-      font-size: 1.7rem;
-      font-family: 'Roboto Slab', serif;
-      font-weight: 700;
-      color: var(--mit-crimson);
-      border-bottom: 2.5px solid var(--mit-gold);
-      padding-bottom: 0.33rem;
-      margin-bottom: 1.2rem;
-      display: inline-block;
-      position: relative;
-      background: var(--section-highlight);
-      border-radius: 7px;
-      padding-right: 1.1rem;
-      padding-left: .5rem;
-    }
-    .badge {
-      display: inline-block;
-      background: var(--badge-bg);
-      color: var(--badge-color);
-      border-radius: 7px;
-      font-size: 0.93rem;
-      font-weight: 700;
-      padding: 0.25em 0.75em;
-      margin-left: .7em;
-      letter-spacing: 0.15em;
-      vertical-align: middle;
-      text-transform: uppercase;
-      box-shadow: 0 2px 6px rgba(163,31,52,0.09);
-    }
-    .project-list {
-      display: grid;
-      gap: 1.25rem;
-      grid-template-columns: 1fr;
-    }
-    .project {
-      border-left: 4px solid var(--mit-accent);
-      background: #e3f6f9;
-      border-radius: 7px;
-      transition: background var(--transition), border-color var(--transition);
-      padding-left: 1.1rem;
-      padding-right: .5rem;
-      padding-top: .8rem;
-      padding-bottom: .8rem;
-      font-size: 1.09rem;
-      box-shadow: 0 2px 8px rgba(0,188,212,0.06);
-      position: relative;
-    }
-    .project:hover {
-      background: #e0f7fa;
-      border-left: 4px solid var(--mit-gold);
-    }
-    .btn {
-      background: var(--mit-crimson);
-      color: var(--badge-color);
-      padding: 0.68rem 1.37rem;
-      border: none;
-      border-radius: 6px;
-      font-weight: 700;
-      letter-spacing: 0.7px;
-      cursor: pointer;
-      font-size: 1.09rem;
-      transition: background var(--transition), color var(--transition), transform var(--transition);
-      text-decoration: none;
-      display: inline-block;
-      margin-top: 0.85rem;
-      box-shadow: 0 2px 8px rgba(163,31,52,0.09);
-      font-family: 'Inter', Arial, sans-serif;
-    }
-    .btn:hover, .btn:focus {
-      background: var(--mit-gold);
-      color: var(--mit-crimson);
-      transform: scale(1.04) translateY(-1.5px);
-    }
-    .contact-list {
-      list-style: none;
-      padding: 0;
-      margin: 0.5rem 0 0 0;
-    }
-    .contact-list li {
-      margin-bottom: 0.7rem;
-      font-size: 1.14rem;
-      display: flex;
-      align-items: center;
-    }
-    .contact-list i {
-      color: var(--mit-accent);
-      margin-right: 0.65rem;
-      font-size: 1.22em;
-    }
-    .contact-list a {
-      color: var(--mit-crimson);
-      text-decoration: underline;
-      font-weight: 600;
-      transition: color var(--transition);
-    }
-    .contact-list a:hover {
-      color: var(--mit-gold);
-    }
-    footer {
-      text-align: center;
-      padding: 1.5rem;
-      background: #232323;
-      font-size: 1.1rem;
-      color: #fff;
-      letter-spacing: 0.3px;
-      border-radius: 0 0 var(--border-radius) var(--border-radius);
-      box-shadow: 0 -2px 10px rgba(163,31,52,0.08);
-    }
-    @media (min-width: 600px) {
-      .project-list { grid-template-columns: 1fr 1fr; }
-      section { padding: 2.3rem 3.3rem 2rem 3.3rem;}
-    }
-    @media (max-width: 500px) {
-      header h1 { font-size: 2.08rem;}
-      main { padding: 0 0.17rem;}
-      section { padding: 1rem;}
-      nav a { font-size: 1rem;}
-      h2 { font-size: 1.13rem;}
-    }
-  </style>
+  <!-- Styles will go here -->
 </head>
 <body>
+  <!-- Header -->
   <header>
     <h1>Sanjay Kumar Sakamuri Kamalakar</h1>
-    <p>Learning ML & Backend &mdash; SRM CSE Undergraduate <span class="badge">IEEE CS Student</span></p>
+    <p>Machine Learning & Backend Engineering | CSE @ SRMIST <span class="badge">IEEE CS Student</span></p>
     <nav>
       <a href="#about" class="active">About</a>
       <a href="#publications">Publications</a>
@@ -281,23 +34,23 @@
       <a href="mailto:sksanjaykumar010307@gmail.com" title="Email" rel="noopener noreferrer"><i class="fas fa-envelope"></i></a>
     </div>
   </header>
+
+  <!-- Main Content -->
   <main>
     <section id="about">
       <h2>About Me</h2>
       <p>
-        I’m a B.Tech Computer Science Engineering student at <span class="badge" style="background:var(--mit-gold);color:var(--mit-crimson);">SRM</span> Institute of Science and Technology, exploring Machine Learning and Backend Engineering.<br><br>
-        <strong>IEEE Computer Society Student Member.</strong> I love building projects that connect science, math, and technology.<br><br>
-        <strong>Courses:</strong> Completed <span class="badge" style="background:var(--mit-accent);">Supervised ML</span> and pursuing the Machine Learning Specialization by Andrew Ng (Coursera).<br><br>
-        My passion is visualizing abstract scientific principles through code, and creating tools that enhance learning—such as quantum distributions or interactive ODE solvers.
+        I’m a B.Tech Computer Science Engineering student at <strong>SRM Institute of Science and Technology</strong>, specializing in <strong>Machine Learning</strong> and <strong>Backend Engineering</strong>. As an IEEE Computer Society Student Member, I’m deeply invested in bridging the gap between mathematics, science, and real-world systems through code.<br><br>
+        I’ve completed Andrew Ng's foundational courses on Machine Learning (Coursera) and actively publish academic visual tools—like electron distribution simulators and equation solvers—to enhance scientific learning and accessibility.
       </p>
     </section>
 
     <section id="publications">
       <h2>Publications</h2>
       <div class="publication">
-        <strong>Fermi-Dirac Probability Visualizer</strong> <span class="badge" style="background:var(--mit-accent);">2025</span><br />
+        <strong>Fermi-Dirac Probability Visualizer</strong> <span class="badge">2025</span><br />
         <em>Zenodo (Preprint)</em><br />
-        <a href="https://zenodo.org/record/15592765" target="_blank" rel="noopener noreferrer" class="btn" style="padding:0.45em 1.1em;font-size:.98em;">DOI: 10.5281/zenodo.15592765</a>
+        <a href="https://zenodo.org/record/15592765" target="_blank" rel="noopener noreferrer" class="btn">DOI: 10.5281/zenodo.15592765</a>
       </div>
     </section>
 
@@ -305,13 +58,13 @@
       <h2>Projects</h2>
       <div class="project-list">
         <div class="project">
-          <strong>Differential Equation Solver (GUI)</strong> <span style="background:var(--mit-gold);color:var(--mit-crimson);border-radius:5px;padding:2px 8px;font-size:.86em;margin-left:.6em;">Python</span><br />
-          Python GUI app (tkinter &amp; sympy) for solving ODEs interactively.<br />
+          <strong>Differential Equation Solver (GUI)</strong> <span class="badge">Python</span><br />
+          A GUI application using <code>tkinter</code> and <code>sympy</code> to dynamically solve and visualize ordinary differential equations.<br />
           <a href="https://github.com/Sanjaykumar030/DiffEqnSolver" target="_blank" rel="noopener noreferrer" class="btn">GitHub Repo</a>
         </div>
         <div class="project">
-          <strong>Fermi-Dirac Probability Visualizer</strong> <span style="background:var(--mit-accent);color:#fff;border-radius:5px;padding:2px 8px;font-size:.86em;margin-left:.6em;">Visualizer</span><br />
-          Visualizer for Fermi-Dirac distributions—numerical tools, interactive graphs, and quantum electron analysis.<br />
+          <strong>Fermi-Dirac Probability Visualizer</strong> <span class="badge">ML + SciVis</span><br />
+          An interactive tool for visualizing electron distribution across energy states, using matplotlib + numerical methods.<br />
           <a href="https://github.com/Sanjaykumar030/Fermi-Dirac-Probability-Visualizer" target="_blank" rel="noopener noreferrer" class="btn">GitHub Repo</a>
         </div>
       </div>
@@ -319,20 +72,21 @@
 
     <section id="resume">
       <h2>Resume</h2>
-      <a class="btn" href="YOUR_RESUME_LINK_HERE" target="_blank" rel="noopener noreferrer">Download Resume</a>
+      <a class="btn" href="https://your_resume_link.pdf" target="_blank" rel="noopener noreferrer">Download Resume</a>
     </section>
 
     <section id="contact">
       <h2>Contact</h2>
       <ul class="contact-list">
         <li><i class="fas fa-envelope"></i> sksanjaykumar010307@gmail.com</li>
-        <li><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/sanjay-kumar-sakamuri-kamalakar-a67148214" target="_blank" rel="noopener noreferrer">linkedin.com/in/sanjay-kumar-sakamuri-kamalakar-a67148214</a></li>
-        <li><i class="fab fa-github"></i> <a href="https://github.com/Sanjaykumar030" target="_blank" rel="noopener noreferrer">github.com/Sanjaykumar030</a></li>
+        <li><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/sanjay-kumar-sakamuri-kamalakar-a67148214" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        <li><i class="fab fa-github"></i> <a href="https://github.com/Sanjaykumar030" target="_blank" rel="noopener noreferrer">GitHub</a></li>
       </ul>
     </section>
   </main>
+
   <footer>
-    &copy; 2025 Sanjay Kumar Sakamuri Kamalakar &mdash; Built with passion and code.
+    &copy; 2025 Sanjay Kumar Sakamuri Kamalakar — Built with vision, precision, and code.
   </footer>
 </body>
 </html>
