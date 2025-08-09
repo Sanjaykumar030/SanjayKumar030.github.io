@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sanjay Kumar Sakamuri Kamalakar | AI Researcher Portfolio</title>
+    <title>Sanjay Kumar Sakamuri Kamalakar | ML Researcher Portfolio</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
     
@@ -41,13 +41,6 @@
             opacity: 1;
             transform: translateY(0);
         }
-        /* Modal styles */
-        .modal {
-            transition: opacity 0.25s ease;
-        }
-        .modal-content {
-             transition: transform 0.25s ease;
-        }
     </style>
 </head>
 <body class="transition-colors duration-500">
@@ -62,7 +55,6 @@
                         <a href="#publications" class="hover:text-sky-500 dark:hover:text-sky-400 transition-colors">Publications</a>
                         <a href="#projects" class="hover:text-sky-500 dark:hover:text-sky-400 transition-colors">Projects</a>
                         <a href="#skills" class="hover:text-sky-500 dark:hover:text-sky-400 transition-colors">Skills</a>
-                        <a href="#ai-sandbox" class="hover:text-sky-500 dark:hover:text-sky-400 transition-colors">AI Sandbox</a>
                     </nav>
                     <button id="theme-toggle" class="p-2 rounded-full text-slate-500 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors">
                         <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
@@ -174,21 +166,6 @@
                     </div>
                 </div>
             </section>
-            
-            <section id="ai-sandbox" class="py-20 fade-in-section">
-                <h2 class="text-3xl font-bold text-slate-800 dark:text-white mb-8">AI Sandbox</h2>
-                <div class="bg-white dark:bg-slate-800 p-8 rounded-xl shadow-lg border border-slate-200 dark:border-slate-700">
-                    <h3 class="text-2xl font-bold text-slate-900 dark:text-white">AI-Powered Explanations</h3>
-                    <p class="mt-2 text-slate-600 dark:text-slate-300">Curious about a skill or project on this page? Enter a term like 'CatBoost' or 'SHAP' below, and I'll provide a concise explanation.</p>
-                    
-                    <div class="mt-6 flex flex-col sm:flex-row gap-4">
-                        <input type="text" id="ai-input" placeholder="e.g., CatBoost, SHAP, XGBoost" class="flex-grow px-4 py-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 focus:ring-2 focus:ring-sky-500 focus:outline-none transition">
-                        <button id="generate-explanation-btn" class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-sky-600 text-white font-semibold rounded-lg shadow-md hover:bg-sky-500 transition-transform hover:scale-105 disabled:bg-sky-300 disabled:cursor-not-allowed">
-                            🧠 Explain This Concept
-                        </button>
-                    </div>
-                </div>
-            </section>
 
         </div>
     </main>
@@ -212,20 +189,6 @@
         </div>
     </footer>
     
-    <div id="ai-modal" class="modal fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 p-4 opacity-0 pointer-events-none">
-        <div class="modal-content bg-white dark:bg-slate-800 rounded-2xl shadow-2xl w-full max-w-2xl p-8 transform scale-95">
-            <div class="flex justify-between items-center mb-4">
-                <h3 class="text-2xl font-bold text-slate-900 dark:text-white">✨ AI-Generated Explanation</h3>
-                <button id="close-modal-btn" class="p-2 rounded-full text-slate-500 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
-                </button>
-            </div>
-            <div id="ai-results" class="text-slate-600 dark:text-slate-300 space-y-4 max-h-[60vh] overflow-y-auto">
-            </div>
-        </div>
-    </div>
-
-
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             // --- THEME TOGGLE LOGIC ---
@@ -380,98 +343,7 @@
                 }
             `;
             document.head.appendChild(styleSheet);
-
-            // --- AI SANDBOX & GEMINI API LOGIC ---
-            const generateBtn = document.getElementById('generate-explanation-btn');
-            const aiInput = document.getElementById('ai-input');
-            const aiModal = document.getElementById('ai-modal');
-            const closeModalBtn = document.getElementById('close-modal-btn');
-            const aiResults = document.getElementById('ai-results');
-
-            const showModal = () => {
-                aiModal.classList.remove('opacity-0', 'pointer-events-none');
-                aiModal.querySelector('.modal-content').classList.remove('scale-95');
-            };
-
-            const hideModal = () => {
-                aiModal.classList.add('opacity-0', 'pointer-events-none');
-                aiModal.querySelector('.modal-content').classList.add('scale-95');
-            };
-
-            closeModalBtn.addEventListener('click', hideModal);
-            aiModal.addEventListener('click', (e) => {
-                if (e.target === aiModal) {
-                    hideModal();
-                }
-            });
-
-            const generateExplanation = async () => {
-                const topic = aiInput.value.trim();
-                if (!topic) {
-                    aiInput.focus();
-                    return;
-                }
-
-                generateBtn.disabled = true;
-                generateBtn.innerHTML = `
-                    <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                    </svg>
-                    Generating...
-                `;
-                aiResults.innerHTML = '<p>Generating an explanation...</p>';
-                showModal();
-
-                const prompt = `Explain the concept of "${topic}" in a clear and concise way, as if you were explaining it to a fellow computer science undergraduate. Start with a simple analogy, then provide a slightly more technical definition, and finally, list 2-3 key benefits or use cases. Keep the entire explanation under 150 words. Format the output as clean HTML with paragraphs and bold tags.`;
-                
-                try {
-                    let chatHistory = [{ role: "user", parts: [{ text: prompt }] }];
-                    const payload = { contents: chatHistory };
-                    const apiKey = ""; // API key will be injected by the environment
-                    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
-                    
-                    const response = await fetch(apiUrl, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(payload)
-                    });
-
-                    if (!response.ok) {
-                        throw new Error(`API request failed with status ${response.status}`);
-                    }
-
-                    const result = await response.json();
-                    
-                    if (result.candidates && result.candidates.length > 0 &&
-                        result.candidates[0].content && result.candidates[0].content.parts &&
-                        result.candidates[0].content.parts.length > 0) {
-                        const text = result.candidates[0].content.parts[0].text;
-                        const htmlResult = text
-                            .replace(/\*\*(.*?)\*\*/g, '<strong class="font-bold text-slate-800 dark:text-white">$1</strong>')
-                            .replace(/\n/g, '<br>');
-                        aiResults.innerHTML = htmlResult;
-                    } else {
-                        throw new Error("Invalid response structure from API.");
-                    }
-
-                } catch (error) {
-                    console.error("Error calling Gemini API:", error);
-                    aiResults.innerHTML = `<p class="text-red-500">Sorry, something went wrong. Please try again later. <br><small>${error.message}</small></p>`;
-                } finally {
-                    generateBtn.disabled = false;
-                    generateBtn.innerHTML = '🧠 Explain This Concept';
-                }
-            };
-
-            generateBtn.addEventListener('click', generateExplanation);
-            aiInput.addEventListener('keypress', (e) => {
-                if (e.key === 'Enter') {
-                    generateExplanation();
-                }
-            });
-
-
+            
             // Initial render
             renderProjects();
         });
