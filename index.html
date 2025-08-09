@@ -5,10 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sanjay Kumar Sakamuri Kamalakar | AI Researcher Portfolio</title>
     
-    <!-- Tailwind CSS for modern styling -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Google Fonts: Inter for a clean, professional look -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -54,7 +52,6 @@
 </head>
 <body class="transition-colors duration-500">
 
-    <!-- Header & Navigation -->
     <header class="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm shadow-sm">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
@@ -68,7 +65,6 @@
                         <a href="#ai-sandbox" class="hover:text-sky-500 dark:hover:text-sky-400 transition-colors">AI Sandbox</a>
                     </nav>
                     <button id="theme-toggle" class="p-2 rounded-full text-slate-500 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors">
-                        <!-- Moon and Sun Icons -->
                         <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
                         <svg id="sun-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
                     </button>
@@ -80,7 +76,6 @@
     <main class="pt-24">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             
-            <!-- Hero Section -->
             <section class="text-center min-h-[60vh] flex flex-col justify-center items-center">
                 <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 dark:text-white tracking-tight">
                     Engineering Intelligent Systems
@@ -98,17 +93,14 @@
                 </div>
             </section>
 
-            <!-- About Section -->
             <section id="about" class="py-20 fade-in-section">
                 <h2 class="text-3xl font-bold text-slate-800 dark:text-white mb-8">About Me</h2>
                 <div class="space-y-4 text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
-                    <p>I am a Computer Science undergraduate (B.Tech 2024-2028) at SRMIST.</p>
-                    <p>My work centers on the end-to-end machine learning pipeline, from rigorous data preprocessing to advanced model training and, crucially, model interpretability using methods like SHAP. I am driven by the challenge of building AI systems that are not only powerful but also transparent, fair, and reliable enough for high-stakes applications.</p>
-                    <p>Currently, I am deeply engaged in research that bridges theoretical foundations with practical impact—such as modeling dopamine-triggering patterns in digital media using interpretable ML. My goal is to contribute to AI systems that enhance human well-being while rigorously addressing ethical and safety concerns. In parallel, I actively build scalable, reproducible software tools and open datasets to push forward the frontier of transparent AI, preparing myself to excel at top-tier graduate programs and research labs globally.</p>
-              </div>
+                    <p>I am a Computer Science undergraduate (B.Tech 2024-2028) at SRMIST with a core focus on the end-to-end machine learning lifecycle—from data to deployment.</p>
+                    <p>My technical expertise is in building high-performance, interpretable models. I specialize in rigorous data preprocessing, advanced feature engineering, and training models like XGBoost and CatBoost. A key part of my work is ensuring transparency through interpretability techniques like SHAP, which is crucial for reliable, high-stakes AI applications.</p>
+                </div>
             </section>
 
-            <!-- Publications Section -->
             <section id="publications" class="py-20 fade-in-section">
                 <h2 class="text-3xl font-bold text-slate-800 dark:text-white mb-8">Publications</h2>
                 <div class="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-lg border border-slate-200 dark:border-slate-700">
@@ -126,18 +118,14 @@
                 </div>
             </section>
 
-            <!-- Projects Section -->
             <section id="projects" class="py-20 fade-in-section">
                 <h2 class="text-3xl font-bold text-slate-800 dark:text-white mb-8">Featured Projects</h2>
                 <div id="project-filters" class="flex flex-wrap gap-2 mb-8">
-                    <!-- Filter buttons will be injected here by JS -->
                 </div>
                 <div id="project-grid" class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <!-- Project cards will be injected here by JS -->
                 </div>
             </section>
 
-            <!-- Skills & Certifications Section -->
             <section id="skills" class="py-20 fade-in-section">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
                     <div>
@@ -186,6 +174,22 @@
                     </div>
                 </div>
             </section>
+            
+            <section id="ai-sandbox" class="py-20 fade-in-section">
+                <h2 class="text-3xl font-bold text-slate-800 dark:text-white mb-8">AI Sandbox</h2>
+                <div class="bg-white dark:bg-slate-800 p-8 rounded-xl shadow-lg border border-slate-200 dark:border-slate-700">
+                    <h3 class="text-2xl font-bold text-slate-900 dark:text-white">AI-Powered Explanations</h3>
+                    <p class="mt-2 text-slate-600 dark:text-slate-300">Curious about a skill or project on this page? Enter a term like 'CatBoost' or 'SHAP' below, and I'll provide a concise explanation.</p>
+                    
+                    <div class="mt-6 flex flex-col sm:flex-row gap-4">
+                        <input type="text" id="ai-input" placeholder="e.g., CatBoost, SHAP, XGBoost" class="flex-grow px-4 py-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 focus:ring-2 focus:ring-sky-500 focus:outline-none transition">
+                        <button id="generate-explanation-btn" class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-sky-600 text-white font-semibold rounded-lg shadow-md hover:bg-sky-500 transition-transform hover:scale-105 disabled:bg-sky-300 disabled:cursor-not-allowed">
+                            🧠 Explain This Concept
+                        </button>
+                    </div>
+                </div>
+            </section>
+
         </div>
     </main>
 
@@ -208,7 +212,6 @@
         </div>
     </footer>
     
-    <!-- Modal for AI Generated Explanation -->
     <div id="ai-modal" class="modal fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 p-4 opacity-0 pointer-events-none">
         <div class="modal-content bg-white dark:bg-slate-800 rounded-2xl shadow-2xl w-full max-w-2xl p-8 transform scale-95">
             <div class="flex justify-between items-center mb-4">
@@ -218,7 +221,6 @@
                 </button>
             </div>
             <div id="ai-results" class="text-slate-600 dark:text-slate-300 space-y-4 max-h-[60vh] overflow-y-auto">
-                <!-- AI content will be injected here -->
             </div>
         </div>
     </div>
@@ -406,8 +408,6 @@
             const generateExplanation = async () => {
                 const topic = aiInput.value.trim();
                 if (!topic) {
-                    // Using a custom modal/alert is better, but for simplicity:
-                    // alert("Please enter a topic."); 
                     aiInput.focus();
                     return;
                 }
@@ -447,7 +447,6 @@
                         result.candidates[0].content && result.candidates[0].content.parts &&
                         result.candidates[0].content.parts.length > 0) {
                         const text = result.candidates[0].content.parts[0].text;
-                        // Basic markdown to HTML conversion
                         const htmlResult = text
                             .replace(/\*\*(.*?)\*\*/g, '<strong class="font-bold text-slate-800 dark:text-white">$1</strong>')
                             .replace(/\n/g, '<br>');
