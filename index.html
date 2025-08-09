@@ -1,264 +1,358 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sanjay Kumar Sakamuri Kamalakar | ML & Backend Portfolio</title>
-  <meta name="description" content="MIT-level portfolio of Sanjay Kumar Sakamuri Kamalakar, a CSE undergraduate at SRM, focused on Machine Learning, Backend Engineering, and research-grade visual tools." />
-  <meta name="author" content="Sanjay Kumar Sakamuri Kamalakar" />
-  <meta property="og:title" content="Sanjay Kumar Sakamuri Kamalakar | ML & Backend Portfolio">
-  <meta property="og:description" content="Projects, research, and contact info of SRM CSE undergraduate Sanjay Kumar Sakamuri Kamalakar.">
-  <meta property="og:image" content="https://yourdomain.com/preview.jpg">
-  <meta property="og:url" content="https://yourusername.github.io">
-  <meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" href="https://fav.farm/%F0%9F%8C%9F" type="image/svg+xml" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Roboto+Slab:wght@700&family=Fira+Mono&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <!-- Styles will go here -->
-  <style>
-  :root {
-    --mit-crimson: #a31f34;
-    --mit-accent: #00bcd4;
-    --mit-gold: #ffd600;
-    --bg-gradient: linear-gradient(120deg, #f1f4fa 0%, #e3e7ed 100%);
-    --text: #343a40;
-    --heading: #232323;
-    --section-bg: #fff;
-    --shadow: 0 6px 28px rgba(0,0,0,0.10);
-    --radius: 12px;
-    --transition: 0.3s ease;
-  }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanjay Kumar S. K. | AI Researcher Portfolio</title>
+    
+    <!-- Tailwind CSS for modern styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter for a clean, professional look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-  body {
-    margin: 0;
-    padding: 0;
-    background: var(--bg-gradient);
-    font-family: 'Inter', sans-serif;
-    color: var(--text);
-    line-height: 1.7;
-  }
-
-  header {
-    text-align: center;
-    padding: 2.5rem 1rem;
-    background: linear-gradient(100deg, var(--mit-crimson), var(--mit-accent));
-    color: #fff;
-  }
-
-  header h1 {
-    margin: 0;
-    font-size: 2.7rem;
-    font-family: 'Roboto Slab', serif;
-  }
-
-  header p {
-    font-size: 1.2rem;
-    margin: 0.6rem 0 1rem;
-  }
-
-  nav a {
-    margin: 0 1rem;
-    color: #fff;
-    text-decoration: none;
-    font-weight: 600;
-    transition: color var(--transition), border-bottom var(--transition);
-  }
-
-  nav a:hover,
-  nav a.active {
-    color: var(--mit-gold);
-    border-bottom: 2px solid var(--mit-gold);
-  }
-
-  .badge {
-    background: var(--mit-gold);
-    color: var(--mit-crimson);
-    font-weight: 700;
-    padding: 0.2em 0.6em;
-    border-radius: 5px;
-    font-size: 0.85rem;
-  }
-
-  .socials a {
-    color: #fff;
-    margin: 0 0.5rem;
-    font-size: 1.6rem;
-    transition: transform 0.2s, color var(--transition);
-  }
-
-  .socials a:hover {
-    color: var(--mit-gold);
-    transform: scale(1.1);
-  }
-
-  main {
-    max-width: 950px;
-    margin: 2rem auto;
-    padding: 0 1rem;
-  }
-
-  section {
-    background: var(--section-bg);
-    margin-bottom: 2rem;
-    padding: 2rem;
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-  }
-
-  h2 {
-    font-family: 'Roboto Slab', serif;
-    color: var(--mit-crimson);
-    margin-top: 0;
-    font-size: 1.7rem;
-    border-bottom: 2px solid var(--mit-gold);
-    display: inline-block;
-    padding-bottom: 0.3rem;
-    margin-bottom: 1rem;
-  }
-
-  .btn {
-    display: inline-block;
-    background: var(--mit-crimson);
-    color: #fff;
-    padding: 0.6rem 1.2rem;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background var(--transition), transform 0.2s;
-  }
-
-  .btn:hover {
-    background: var(--mit-gold);
-    color: var(--mit-crimson);
-    transform: scale(1.05);
-  }
-
-  .project-list {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-
-  .project {
-    background: #e3f6f9;
-    padding: 1rem;
-    border-left: 4px solid var(--mit-accent);
-    border-radius: 7px;
-  }
-
-  .project:hover {
-    border-left: 4px solid var(--mit-gold);
-    background: #f0fbfc;
-  }
-
-  .contact-list {
-    list-style: none;
-    padding: 0;
-  }
-
-  .contact-list li {
-    margin-bottom: 0.7rem;
-    font-size: 1.1rem;
-  }
-
-  .contact-list a {
-    color: var(--mit-crimson);
-    font-weight: 600;
-    text-decoration: underline;
-  }
-
-  .contact-list a:hover {
-    color: var(--mit-gold);
-  }
-
-  footer {
-    text-align: center;
-    padding: 1.5rem;
-    background: #232323;
-    color: #fff;
-    font-size: 1rem;
-    border-radius: 0 0 var(--radius) var(--radius);
-  }
-
-  @media (min-width: 600px) {
-    .project-list {
-      grid-template-columns: 1fr 1fr;
-    }
-  }
-</style>
-
+    <style>
+        /* Custom styles for a polished look */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* light mode default */
+            color: #334155;
+        }
+        .dark body {
+            background-color: #0f172a;
+            color: #cbd5e1;
+        }
+        /* Style for the typewriter cursor */
+        .typewriter::after {
+            content: '|';
+            animation: blink 1s step-end infinite;
+        }
+        @keyframes blink {
+            from, to { border-color: transparent }
+            50% { border-color: orange; }
+        }
+        /* Fade-in animation for sections */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
 </head>
-<body>
-  <!-- Header -->
-  <header>
-    <h1>Sanjay Kumar Sakamuri Kamalakar</h1>
-    <p>Machine Learning & Backend Engineering | CSE @ SRMIST <span class="badge">IEEE CS Student</span></p>
-    <nav>
-      <a href="#about" class="active">About</a>
-      <a href="#publications">Publications</a>
-      <a href="#projects">Projects</a>
-      <a href="#resume">Resume</a>
-      <a href="#contact">Contact</a>
-    </nav>
-    <div class="socials" aria-label="Social links">
-      <a href="https://github.com/Sanjaykumar030" title="GitHub" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
-      <a href="https://www.linkedin.com/in/sanjay-kumar-sakamuri-kamalakar-a67148214" title="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
-      <a href="mailto:sksanjaykumar010307@gmail.com" title="Email" rel="noopener noreferrer"><i class="fas fa-envelope"></i></a>
-    </div>
-  </header>
+<body class="transition-colors duration-500">
 
-  <!-- Main Content -->
-  <main>
-    <section id="about">
-      <h2>About Me</h2>
-      <p>
-        I’m a B.Tech Computer Science Engineering student at <strong>SRM Institute of Science and Technology</strong>, specializing in <strong>Machine Learning</strong> and <strong>Backend Engineering</strong>. As an IEEE Computer Society Student Member, I’m deeply invested in bridging the gap between mathematics, science, and real-world systems through code.<br><br>
-        I’ve completed Andrew Ng's foundational courses on Machine Learning (Coursera) and actively publish academic visual tools—like electron distribution simulators and equation solvers—to enhance scientific learning and accessibility.
-      </p>
-    </section>
-
-    <section id="publications">
-      <h2>Publications</h2>
-      <div class="publication">
-        <strong>Fermi-Dirac Probability Visualizer</strong> <span class="badge">2025</span><br />
-        <em>Zenodo (Preprint)</em><br />
-        <a href="https://zenodo.org/record/15592765" target="_blank" rel="noopener noreferrer" class="btn">DOI: 10.5281/zenodo.15592765</a>
-      </div>
-    </section>
-
-    <section id="projects">
-      <h2>Projects</h2>
-      <div class="project-list">
-        <div class="project">
-          <strong>Differential Equation Solver (GUI)</strong> <span class="badge">Python</span><br />
-          A GUI application using <code>tkinter</code> and <code>sympy</code> to dynamically solve and visualize ordinary differential equations.<br />
-          <a href="https://github.com/Sanjaykumar030/DiffEqnSolver" target="_blank" rel="noopener noreferrer" class="btn">GitHub Repo</a>
+    <!-- Header & Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm shadow-sm">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="text-2xl font-bold text-slate-800 dark:text-white">Sanjay Kumar S. K.</div>
+                <div class="flex items-center space-x-4">
+                    <nav class="hidden md:flex space-x-6 text-sm font-medium text-slate-600 dark:text-slate-300">
+                        <a href="#about" class="hover:text-sky-500 dark:hover:text-sky-400 transition-colors">About</a>
+                        <a href="#publications" class="hover:text-sky-500 dark:hover:text-sky-400 transition-colors">Publications</a>
+                        <a href="#projects" class="hover:text-sky-500 dark:hover:text-sky-400 transition-colors">Projects</a>
+                        <a href="#skills" class="hover:text-sky-500 dark:hover:text-sky-400 transition-colors">Skills</a>
+                    </nav>
+                    <button id="theme-toggle" class="p-2 rounded-full text-slate-500 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors">
+                        <!-- Moon and Sun Icons -->
+                        <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                        <svg id="sun-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                    </button>
+                </div>
+            </div>
         </div>
-        <div class="project">
-          <strong>Fermi-Dirac Probability Visualizer</strong> <span class="badge">ML + SciVis</span><br />
-          An interactive tool for visualizing electron distribution across energy states, using matplotlib + numerical methods.<br />
-          <a href="https://github.com/Sanjaykumar030/Fermi-Dirac-Probability-Visualizer" target="_blank" rel="noopener noreferrer" class="btn">GitHub Repo</a>
+    </header>
+
+    <main class="pt-24">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Hero Section -->
+            <section class="text-center min-h-[60vh] flex flex-col justify-center items-center">
+                <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+                    Building Trustworthy AI
+                </h1>
+                <p id="typewriter" class="mt-4 text-lg md:text-xl text-sky-600 dark:text-sky-400 font-medium typewriter"></p>
+                <div class="mt-8 flex justify-center gap-4">
+                    <a href="https://github.com/Sanjaykumar030" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 bg-slate-800 text-white font-semibold rounded-lg shadow-md hover:bg-slate-700 transition-transform hover:scale-105">
+                        GitHub
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"></path><path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"></path></svg>
+                    </a>
+                    <a href="https://linkedin.com/in/sanjay-kumar-sakamuri-kamalakar-a67148214" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 bg-sky-600 text-white font-semibold rounded-lg shadow-md hover:bg-sky-500 transition-transform hover:scale-105">
+                        LinkedIn
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"></path><path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"></path></svg>
+                    </a>
+                </div>
+            </section>
+
+            <!-- About Section -->
+            <section id="about" class="py-20 fade-in-section">
+                <h2 class="text-3xl font-bold text-slate-800 dark:text-white mb-8">About Me</h2>
+                <div class="space-y-4 text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
+                    <p>I am a Computer Science undergraduate (B.Tech 2024-2028) at SRMIST with a current CGPA of 9.88. My core mission is to pursue a graduate degree (MS in CS/AI) at a top-tier global university like TUM or Stanford to contribute to the frontier of trustworthy and explainable artificial intelligence.</p>
+                    <p>My work centers on the end-to-end machine learning pipeline, from rigorous data preprocessing to advanced model training and, crucially, model interpretability using methods like SHAP. I am driven by the challenge of building AI systems that are not only powerful but also transparent, fair, and reliable enough for high-stakes applications.</p>
+                </div>
+            </section>
+
+            <!-- Publications Section -->
+            <section id="publications" class="py-20 fade-in-section">
+                <h2 class="text-3xl font-bold text-slate-800 dark:text-white mb-8">Publications</h2>
+                <div class="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-lg border border-slate-200 dark:border-slate-700">
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white">A Dataset for Detecting Dopamine-Triggering Stimuli in Children’s YouTube Videos</h3>
+                    <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Zenodo, 2024</p>
+                    <p class="mt-4 text-slate-600 dark:text-slate-300">Authored and published a manually annotated dataset to facilitate research on digital stimuli affecting children. This work serves as a foundation for my Dopamine-Stimuli-Predictive-Model project.</p>
+                    <div class="mt-4 flex flex-wrap items-center gap-4">
+                        <a href="https://doi.org/10.5281/zenodo.16755363" target="_blank" class="inline-flex items-center gap-2 text-sky-600 dark:text-sky-400 hover:underline font-semibold">
+                            DOI: 10.5281/zenodo.16755363
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                        </a>
+                        <span class="bg-teal-100 text-teal-800 dark:bg-teal-900 dark:text-teal-300 text-xs font-semibold px-2.5 py-0.5 rounded-full">Dataset</span>
+                        <span class="bg-teal-100 text-teal-800 dark:bg-teal-900 dark:text-teal-300 text-xs font-semibold px-2.5 py-0.5 rounded-full">Research</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Projects Section -->
+            <section id="projects" class="py-20 fade-in-section">
+                <h2 class="text-3xl font-bold text-slate-800 dark:text-white mb-8">Featured Projects</h2>
+                <div id="project-filters" class="flex flex-wrap gap-2 mb-8">
+                    <!-- Filter buttons will be injected here by JS -->
+                </div>
+                <div id="project-grid" class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Project cards will be injected here by JS -->
+                </div>
+            </section>
+
+            <!-- Skills & Certifications Section -->
+            <section id="skills" class="py-20 fade-in-section">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <div>
+                        <h2 class="text-3xl font-bold text-slate-800 dark:text-white mb-8">Core Skills</h2>
+                        <div class="space-y-6">
+                            <div>
+                                <h3 class="text-xl font-semibold text-slate-700 dark:text-slate-200 mb-2">ML/DL</h3>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="skill-tag">XGBoost</span><span class="skill-tag">CatBoost</span><span class="skill-tag">SHAP</span><span class="skill-tag">TensorFlow</span><span class="skill-tag">PyTorch</span><span class="skill-tag">Feature Engineering</span>
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-slate-700 dark:text-slate-200 mb-2">Programming & CS</h3>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="skill-tag">Python (OOP)</span><span class="skill-tag">C++</span><span class="skill-tag">SQL</span><span class="skill-tag">Algorithms</span><span class="skill-tag">Data Structures</span>
+                                </div>
+                            </div>
+                             <div>
+                                <h3 class="text-xl font-semibold text-slate-700 dark:text-slate-200 mb-2">Tools & Platforms</h3>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="skill-tag">Git & GitHub</span><span class="skill-tag">Docker</span><span class="skill-tag">GCP</span><span class="skill-tag">Jupyter</span><span class="skill-tag">Google Colab</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h2 class="text-3xl font-bold text-slate-800 dark:text-white mb-8">Certifications</h2>
+                        <div class="space-y-4 bg-white dark:bg-slate-800 p-6 rounded-xl shadow-lg border border-slate-200 dark:border-slate-700">
+                            <div class="cert-item">
+                                <h3 class="font-semibold text-slate-900 dark:text-white">Machine Learning Specialization</h3>
+                                <p class="text-slate-500 dark:text-slate-400">Stanford University | DeepLearning.AI</p>
+                            </div>
+                            <div class="cert-item">
+                                <h3 class="font-semibold text-slate-900 dark:text-white">CS50’s Introduction to Programming with Python</h3>
+                                <p class="text-slate-500 dark:text-slate-400">Harvard University</p>
+                            </div>
+                            <div class="cert-item">
+                                <h3 class="font-semibold text-slate-900 dark:text-white">SQL for Data Science</h3>
+                                <p class="text-slate-500 dark:text-slate-400">University of California, Davis</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
-      </div>
-    </section>
+    </main>
 
-    <section id="resume">
-      <h2>Resume</h2>
-      <a class="btn" href="https://your_resume_link.pdf" target="_blank" rel="noopener noreferrer">Download Resume</a>
-    </section>
+    <footer class="py-12 bg-slate-100 dark:bg-slate-800/50 mt-20">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h3 class="text-2xl font-bold text-slate-800 dark:text-white">Let's Connect</h3>
+            <p class="mt-2 text-slate-600 dark:text-slate-300">I'm actively seeking research opportunities and collaborations.</p>
+            <a href="mailto:sksanjaykumar010307@gmail.com" class="mt-6 inline-block bg-sky-600 text-white font-semibold px-8 py-3 rounded-lg shadow-md hover:bg-sky-500 transition-transform hover:scale-105">
+                Contact Me
+            </a>
+            <div class="mt-8 flex justify-center space-x-6">
+                <a href="https://github.com/Sanjaykumar030" target="_blank" class="text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-white transition-transform hover:scale-110">
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.492.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.378.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd"></path></svg>
+                </a>
+                <a href="https://orcid.org/0009-0009-1021-2297" target="_blank" class="text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-white transition-transform hover:scale-110">
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378h2.05v10.05h-2.05V4.378zm2.961 10.05h2.05v-5.025h-2.05v5.025zm-4.025-5.025c0-.566.46-1.025 1.025-1.025s1.025.46 1.025 1.025a1.025 1.025 0 0 1-2.05 0z"/></svg>
+                </a>
+            </div>
+            <p class="mt-8 text-sm text-slate-500 dark:text-slate-400">© 2025 Sanjay Kumar Sakamuri Kamalakar. All Rights Reserved.</p>
+        </div>
+    </footer>
 
-    <section id="contact">
-      <h2>Contact</h2>
-      <ul class="contact-list">
-        <li><i class="fas fa-envelope"></i> sksanjaykumar010307@gmail.com</li>
-        <li><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/sanjay-kumar-sakamuri-kamalakar-a67148214" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-        <li><i class="fab fa-github"></i> <a href="https://github.com/Sanjaykumar030" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-      </ul>
-    </section>
-  </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- THEME TOGGLE LOGIC ---
+            const themeToggle = document.getElementById('theme-toggle');
+            const sunIcon = document.getElementById('sun-icon');
+            const moonIcon = document.getElementById('moon-icon');
+            const userTheme = localStorage.getItem('theme');
+            const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-  <footer>
-    &copy; 2025 Sanjay Kumar Sakamuri Kamalakar — Built with vision, precision, and code.
-  </footer>
+            const applyTheme = (theme) => {
+                if (theme === 'dark') {
+                    document.documentElement.classList.add('dark');
+                    sunIcon.classList.remove('hidden');
+                    moonIcon.classList.add('hidden');
+                } else {
+                    document.documentElement.classList.remove('dark');
+                    sunIcon.classList.add('hidden');
+                    moonIcon.classList.remove('hidden');
+                }
+            };
+
+            if (userTheme === 'dark' || (!userTheme && systemTheme)) {
+                applyTheme('dark');
+            } else {
+                applyTheme('light');
+            }
+
+            themeToggle.addEventListener('click', () => {
+                const isDark = document.documentElement.classList.toggle('dark');
+                localStorage.setItem('theme', isDark ? 'dark' : 'light');
+                sunIcon.classList.toggle('hidden');
+                moonIcon.classList.toggle('hidden');
+            });
+
+            // --- TYPEWRITER EFFECT LOGIC ---
+            const typewriterElement = document.getElementById('typewriter');
+            const typewriterText = "A CSE Undergrad focused on Interpretable AI.";
+            let i = 0;
+            function typeWriter() {
+                if (i < typewriterText.length) {
+                    typewriterElement.innerHTML += typewriterText.charAt(i);
+                    i++;
+                    setTimeout(typeWriter, 50);
+                }
+            }
+            typeWriter();
+
+            // --- PROJECT DATA & FILTERING LOGIC ---
+            const projects = [
+                {
+                    title: 'Dopamine-Stimuli-Predictive-Model',
+                    description: 'Engineered a full ML pipeline to predict dopamine-triggering patterns in video content. Leveraged XGBoost and CatBoost, with a focus on model interpretability using SHAP.',
+                    link: 'https://github.com/Sanjaykumar030/Dopamine-Stimuli-Predictive-Model',
+                    tags: ['Research', 'ML Pipeline', 'XGBoost', 'SHAP']
+                },
+                {
+                    title: 'Chennai Housing Price Predictor',
+                    description: 'Implemented an XGBoost regression model to predict housing prices, featuring robust data preprocessing and advanced feature engineering to handle complex, real-world datasets.',
+                    link: 'https://github.com/Sanjaykumar030/Chennai-Housing-Model',
+                    tags: ['XGBoost', 'Regression', 'Data Preprocessing']
+                },
+                {
+                    title: 'GUI-based Differential Equation Solver',
+                    description: 'Developed a desktop application using Python, Tkinter, and SymPy to solve ordinary differential equations up to order 6, providing a user-friendly interface for a complex mathematical process.',
+                    link: 'https://github.com/Sanjaykumar030/DiffEqn-Solver',
+                    tags: ['Python', 'Algorithm', 'GUI']
+                },
+                {
+                    title: 'Fermi-Dirac Probability Visualizer',
+                    description: 'Created an interactive Matplotlib and NumPy tool to visualize semiconductor occupation probabilities, bridging concepts in solid-state physics and computational science.',
+                    link: 'https://github.com/Sanjaykumar030/Fermi-Dirac-Probability-Visualizer',
+                    tags: ['Python', 'Matplotlib', 'Physics']
+                }
+            ];
+
+            const projectGrid = document.getElementById('project-grid');
+            const projectFilters = document.getElementById('project-filters');
+            const allTags = ['All', ...new Set(projects.flatMap(p => p.tags))];
+
+            function renderProjects(filter = 'All') {
+                projectGrid.innerHTML = '';
+                const filteredProjects = filter === 'All' ? projects : projects.filter(p => p.tags.includes(filter));
+                
+                filteredProjects.forEach(project => {
+                    const projectCard = document.createElement('div');
+                    projectCard.className = 'bg-white dark:bg-slate-800 p-6 rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-slate-200 dark:border-slate-700';
+                    projectCard.innerHTML = `
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white">${project.title}</h3>
+                        <p class="mt-2 text-slate-600 dark:text-slate-300">${project.description}</p>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            ${project.tags.map(tag => `<span class="bg-sky-100 text-sky-800 dark:bg-sky-900 dark:text-sky-300 text-xs font-semibold px-2.5 py-0.5 rounded-full">${tag}</span>`).join('')}
+                        </div>
+                        <a href="${project.link}" target="_blank" class="inline-block mt-4 font-semibold text-sky-600 dark:text-sky-400 hover:underline">View on GitHub &rarr;</a>
+                    `;
+                    projectGrid.appendChild(projectCard);
+                });
+            }
+
+            allTags.forEach(tag => {
+                const filterButton = document.createElement('button');
+                filterButton.textContent = tag;
+                filterButton.className = 'filter-btn px-3 py-1 text-sm font-medium rounded-full transition-colors';
+                if (tag === 'All') {
+                    filterButton.classList.add('bg-sky-600', 'text-white');
+                } else {
+                    filterButton.classList.add('bg-slate-200', 'dark:bg-slate-700', 'text-slate-700', 'dark:text-slate-200', 'hover:bg-slate-300', 'dark:hover:bg-slate-600');
+                }
+                filterButton.addEventListener('click', () => {
+                    document.querySelectorAll('.filter-btn').forEach(btn => {
+                        btn.classList.remove('bg-sky-600', 'text-white');
+                        btn.classList.add('bg-slate-200', 'dark:bg-slate-700', 'text-slate-700', 'dark:text-slate-200');
+                    });
+                    filterButton.classList.add('bg-sky-600', 'text-white');
+                    filterButton.classList.remove('bg-slate-200', 'dark:bg-slate-700', 'text-slate-700', 'dark:text-slate-200');
+                    renderProjects(tag);
+                });
+                projectFilters.appendChild(filterButton);
+            });
+            
+            // --- SCROLL ANIMATION LOGIC ---
+            const sections = document.querySelectorAll('.fade-in-section');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+            
+            // --- DYNAMICALLY ADD CSS FOR SKILL TAGS AND CERT ITEMS ---
+            const styleSheet = document.createElement("style");
+            styleSheet.innerText = `
+                .skill-tag {
+                    background-color: #e2e8f0; /* bg-slate-200 */
+                    color: #475569; /* text-slate-600 */
+                    font-size: 0.875rem; /* text-sm */
+                    font-weight: 500; /* font-medium */
+                    padding: 0.25rem 0.75rem; /* px-3 py-1 */
+                    border-radius: 9999px; /* rounded-full */
+                }
+                .dark .skill-tag {
+                    background-color: #334155; /* dark:bg-slate-700 */
+                    color: #cbd5e1; /* dark:text-slate-300 */
+                }
+                .cert-item {
+                    border-left: 3px solid #0ea5e9; /* border-sky-500 */
+                    padding-left: 1rem;
+                }
+            `;
+            document.head.appendChild(styleSheet);
+
+            // Initial render
+            renderProjects();
+        });
+    </script>
 </body>
 </html>
